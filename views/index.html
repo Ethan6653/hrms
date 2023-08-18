@@ -32,7 +32,7 @@
 
         <div class="layuimini-header-content">
             <a>
-                <div class="layuimini-tool"><i title="展开" class="fa fa-outdent" data-side-fold="1"></i></div>
+                <div class="layuimini-tool"><i title="展開" class="fa fa-outdent" data-side-fold="1"></i></div>
             </a>
 
             <!--电脑端头部菜单-->
@@ -42,7 +42,7 @@
             <!--手机端头部菜单-->
             <ul class="layui-nav layui-layout-left layuimini-header-menu layuimini-mobile-show">
                 <li class="layui-nav-item">
-                    <a href="javascript:;"><i class="fa fa-list-ul"></i> 选择模块</a>
+                    <a href="javascript:;"><i class="fa fa-list-ul"></i> 選擇功能</a>
                     <dl class="layui-nav-child layuimini-menu-header-mobile">
                     </dl>
                 </li>
@@ -51,26 +51,26 @@
             <ul class="layui-nav layui-layout-right">
 
                 <li class="layui-nav-item" lay-unselect>
-                    <a href="javascript:;" data-refresh="刷新"><i class="fa fa-refresh"></i></a>
+                    <a href="javascript:;" data-refresh="重新整理"><i class="fa fa-refresh"></i></a>
                 </li>
 
                 <li class="layui-nav-item layuimini-setting" style="padding-right: 30px">
                     <a href="javascript:;">{{.staff_name}} - {{.staff_id}}</a>
                     <dl class="layui-nav-child">
                         <dd>
-                            <a href="javascript:;" class="change-password" data-title="修改密码" data-icon="fa fa-gears">修改密码</a>
+                            <a href="javascript:;" class="change-password" data-title="修改密碼" data-icon="fa fa-gears">修改密碼</a>
                         </dd>
                         <dd>
                             <hr>
                         </dd>
                         <dd>
-                            <a href="javascript:;" class="login-out">退出登录</a>
+                            <a href="javascript:;" class="login-out">退出登入</a>
                         </dd>
                     </dl>
                 </li>
-<!--                <li class="layui-nav-item layuimini-select-bgcolor" lay-unselect>-->
-<!--                    <a href="javascript:;" data-bgcolor="配色方案"><i class="fa fa-ellipsis-v"></i></a>-->
-<!--                </li>-->
+                <!--                <li class="layui-nav-item layuimini-select-bgcolor" lay-unselect>-->
+                <!--                    <a href="javascript:;" data-bgcolor="配色方案"><i class="fa fa-ellipsis-v"></i></a>-->
+                <!--                </li>-->
                 <li class="layui-nav-item" lay-unselect>
                     <a href="javascript:;"></a>
                 </li>
@@ -100,16 +100,16 @@
                 <li class="layui-this" id="layuiminiHomeTabId" lay-id=""></li>
             </ul>
             <div class="layui-tab-control">
-<!--                <li class="layuimini-tab-roll-left layui-icon layui-icon-left"></li>-->
-<!--                <li class="layuimini-tab-roll-right layui-icon layui-icon-right"></li>-->
+                <!--                <li class="layuimini-tab-roll-left layui-icon layui-icon-left"></li>-->
+                <!--                <li class="layuimini-tab-roll-right layui-icon layui-icon-right"></li>-->
                 <li class="layui-tab-tool layui-icon layui-icon-down">
                     <ul class="layui-nav close-box">
                         <li class="layui-nav-item">
                             <a href="javascript:;"><span class="layui-nav-more"></span></a>
                             <dl class="layui-nav-child">
-                                <dd><a href="javascript:;" layuimini-tab-close="current">关 闭 当 前</a></dd>
-                                <dd><a href="javascript:;" layuimini-tab-close="other">关 闭 其 他</a></dd>
-                                <dd><a href="javascript:;" layuimini-tab-close="all">关 闭 全 部</a></dd>
+                                <dd><a href="javascript:;" layuimini-tab-close="current">關閉當前頁面</a></dd>
+                                <dd><a href="javascript:;" layuimini-tab-close="other">關閉其他頁面</a></dd>
+                                <dd><a href="javascript:;" layuimini-tab-close="all">關閉全部頁面</a></dd>
                             </dl>
                         </li>
                     </ul>
@@ -129,7 +129,7 @@
 <input id="user_type" type="hidden" value="{{.user_type}}">
 
 <script>
-    layui.use(['jquery', 'layer', 'miniAdmin','miniTongji'], function () {
+    layui.use(['jquery', 'layer', 'miniAdmin', 'miniTongji'], function () {
         var $ = layui.jquery,
             layer = layui.layer,
             miniAdmin = layui.miniAdmin,
@@ -138,8 +138,8 @@
         var initUrl = "/static/api/init.json"
         var userNo = $("#staff_id").val();
         var userType = $("#user_type").val();
-        console.log("获取到userNo:" + userNo)
-        console.log("获取到user_type:" + userType)
+        console.log("取得userNo:" + userNo)
+        console.log("取得user_type:" + userType)
         // 存储至本地
         localStorage.setItem("userNo", userNo)
         localStorage.setItem("userType", userType)
@@ -177,30 +177,28 @@
         //     ],
         // });
 
-        function getCookie2(cname)
-        {
+        function getCookie2(cname) {
             var name = cname + "=";
             var ca = document.cookie.split(';');
-            for(var i=0; i<ca.length; i++)
-            {
+            for (var i = 0; i < ca.length; i++) {
                 var c = ca[i].trim();
-                if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+                if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
             }
             return "";
         }
 
         $('.change-password').on("click", function (obj) {
-            localStorage.setItem("password_staff_id",  getCookie2("user_cookie").split("_")[1])
+            localStorage.setItem("password_staff_id", getCookie2("user_cookie").split("_")[1])
             // alert("localStorage, staff_id=" + obj.data.staff_id)
             var index = layer.open({
-                title: '编辑密码',
+                title: '編輯密碼',
                 type: 2,
                 shade: 0.2,
-                maxmin:true,
+                maxmin: true,
                 shadeClose: true,
                 area: ['50%', '50%'],
                 content: '/views/password_edit.html',
-                end: function(){
+                end: function () {
                     //执行搜索重载
                     table.reload('currentTableId', {
                         page: {
@@ -216,30 +214,30 @@
         });
 
         $('.login-out').on("click", function () {
-            layer.msg('正在退出登陆中...', function () {
+            layer.msg('正在登出...', function () {
                 var userNo = localStorage.getItem("userNo");
                 // 清空localStorage
                 localStorage.removeItem("userNo")
                 localStorage.removeItem("userType")
-                var quitData = {staff_id: userNo, user_password:"null", branch_id:"null"}
+                var quitData = {staff_id: userNo, user_password: "null", branch_id: "null"}
                 $.ajax({
                     type: "POST",
                     url: "/account/quit",
                     contentType: "application/json;charset=utf-8",
                     data: JSON.stringify(quitData),
                     dataType: "json",
-                    success:function (data) {
+                    success: function (data) {
                         var resp = JSON.parse(JSON.stringify(data));
                         console.log("resp:" + resp)
                         if (resp.status == 2000) {
-                            layer.msg("退出登陆成功");
+                            layer.msg("登出成功");
                             window.location = '/index';
                         } else {
-                            layer.msg("退出登陆失败, resp = " + JSON.stringify(data));
+                            layer.msg("登出失敗, resp = " + JSON.stringify(data));
                         }
                     },
-                    error:function (resp) {
-                        layer.msg("退出登陆失败, resp = " + JSON.stringify(resp));
+                    error: function (resp) {
+                        layer.msg("登出失敗, resp = " + JSON.stringify(resp));
                     }
                 });
             });
