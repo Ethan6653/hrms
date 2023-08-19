@@ -20,20 +20,20 @@ func Ping(c *gin.Context) {
 }
 
 func Index(c *gin.Context) {
-	// 判断是否存在cookie
+	// 判斷是否存在cookie
 	cookie, err := c.Cookie("user_cookie")
 	if err != nil || cookie == "" {
 		c.HTML(http.StatusOK, "login.html", nil)
 		return
 	}
-	// 已登陆
+	// 已登陸
 	user := strings.Split(cookie, "_")
 	userType := user[0]
 	userNo := user[1]
 	userName := user[3]
 	c.HTML(http.StatusOK, "index.html", gin.H{
-		//"title":     fmt.Sprintf("欢迎%v:%v登陆HRMS", userType, userNo),
-		"title":      fmt.Sprintf("分公司-人力资源管理系统"),
+		//"title":     fmt.Sprintf("歡迎%v:%v登陸HRMS", userType, userNo),
+		"title":      fmt.Sprintf("人力資源管理系統"),
 		"user_type":  userType,
 		"staff_id":   userNo,
 		"staff_name": base64Decode(userName),
@@ -44,7 +44,7 @@ func base64Decode(name string) string {
 	decodeBytes, err := base64.StdEncoding.DecodeString(name)
 	if err != nil {
 		log.Fatalln(err)
-		return "企业员工"
+		return "企業員工"
 	}
 	return string(decodeBytes)
 }
@@ -90,10 +90,10 @@ func Login(c *gin.Context) {
 	var hrmsDB *gorm.DB
 	var ok bool
 	if hrmsDB, ok = resource.DbMapper[dbName]; !ok {
-		log.Printf("[Login err, 无法获取到该分公司db名称, name = %v]", dbName)
+		log.Printf("[Login err, 無法獲取到該分公司db名稱, name = %v]", dbName)
 		c.JSON(200, gin.H{
 			"status": 5000,
-			"result": fmt.Sprintf("[Login err, 无法获取到该分公司db名称, name = %v]", dbName),
+			"result": fmt.Sprintf("[Login err, 無法獲取到該分公司db名稱, name = %v]", dbName),
 		})
 		return
 	}
@@ -113,7 +113,7 @@ func Login(c *gin.Context) {
 	hrmsDB.Where("staff_id = ?", loginDb.StaffId).Find(&staff)
 
 	log.Printf("[handler.Login] user login success, user = %v", loginR)
-	// set cookie user_cookie=角色_工号_分公司ID_员工姓名(base64编码)
+	// set cookie user_cookie=角色_工號_分公司ID_員工姓名(base64編碼)
 	c.SetCookie("user_cookie", fmt.Sprintf("%v_%v_%v_%v", loginDb.UserType, loginDb.StaffId, loginR.BranchId,
 		base64.StdEncoding.EncodeToString([]byte(staff.StaffName))), 0, "/", "*", false, false)
 

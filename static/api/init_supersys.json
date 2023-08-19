@@ -1,10 +1,10 @@
 {
   "homeInfo": {
-    "title": "首页",
+    "title": "首頁",
     "href": "/authority_render/staff_manage"
   },
   "logoInfo": {
-    "title": "欢迎超级管理员",
+    "title": "歡迎超級管理員",
     "image": "/static/images/logo.png",
     "href": ""
   },
@@ -16,31 +16,31 @@
       "target": "_self",
       "child": [
         {
-          "title": "部门管理",
+          "title": "部門管理",
           "href": "/authority_render/dep_manage",
           "icon": "fa fa-home",
           "target": "_self"
         },
         {
-          "title": "职级管理",
+          "title": "職級管理",
           "href": "/authority_render/rank_manage",
           "icon": "fa fa-window-maximize",
           "target": "_self"
         },
         {
-          "title": "员工管理",
+          "title": "員工管理",
           "href": "",
           "icon": "fa fa-gears",
           "target": "_self",
           "child": [
             {
-              "title": "员工信息管理",
+              "title": "員工信息管理",
               "href": "/authority_render/staff_manage",
               "icon": "fa fa-tachometer",
               "target": "_self"
             },
             {
-              "title": "登陆密码管理",
+              "title": "登陸密碼管理",
               "href": "/authority_render/password_manage",
               "icon": "fa fa-tachometer",
               "target": "_self"
@@ -48,19 +48,19 @@
           ]
         },
         {
-          "title": "权限管理",
+          "title": "權限管理",
           "href": "",
           "icon": "fa fa-file-text",
           "target": "_self",
           "child": [
             {
-              "title": "角色权限管理",
+              "title": "角色權限管理",
               "href": "views/authority_manage.html",
               "icon": "fa fa-tachometer",
               "target": "_self"
             },
             {
-              "title": "管理员管理",
+              "title": "管理員管理",
               "href": "views/admin_manage.html",
               "icon": "fa fa-tachometer",
               "target": "_self"

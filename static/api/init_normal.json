@@ -1,10 +1,10 @@
 {
   "homeInfo": {
-    "title": "首页",
+    "title": "首頁",
     "href": "/authority_render/normal_notification_manage"
   },
   "logoInfo": {
-    "title": "欢迎企业员工",
+    "title": "歡迎企業員工",
     "image": "/static/images/logo.png",
     "href": ""
   },
@@ -16,7 +16,7 @@
       "target": "_self",
       "child": [
         {
-          "title": "员工管理",
+          "title": "員工管理",
           "href": "/authority_render/normal_staff_manage",
           "icon": "fa fa-home",
           "target": "_self"
@@ -34,19 +34,19 @@
           "target": "_self",
           "child": [
             {
-              "title": "考勤上报",
+              "title": "考勤上報",
               "href": "/authority_render/normal_attendance_giving_manage",
               "icon": "fa fa-tachometer",
               "target": "_self"
             },
             {
-              "title": "考勤历史",
+              "title": "考勤歷史",
               "href": "/authority_render/normal_attendance_history_manage",
               "icon": "fa fa-tachometer",
               "target": "_self"
             },
             {
-              "title": "考勤审批",
+              "title": "考勤審批",
               "href": "/authority_render/attendance_approve_manage",
               "icon": "fa fa-tachometer",
               "target": "_self"
@@ -60,13 +60,13 @@
           "target": "_self",
           "child": [
             {
-              "title": "工资套账",
+              "title": "工資套賬",
               "href": "/authority_render/normal_salary_detail_manage",
               "icon": "fa fa-tachometer",
               "target": "_self"
             },
             {
-              "title": "工资历史",
+              "title": "工資歷史",
               "href": "/authority_render/normal_salary_history_manage",
               "icon": "fa fa-tachometer",
               "target": "_self"
@@ -86,7 +86,7 @@
               "target": "_self"
             },
             {
-              "title": "候选人管理",
+              "title": "候選人管理",
               "href": "/authority_render/normal_candidate_manage",
               "icon": "fa fa-tachometer",
               "target": "_self"
@@ -94,19 +94,19 @@
           ]
         },
         {
-          "title": "考试管理",
+          "title": "考試管理",
           "href": "",
           "icon": "fa fa-gears",
           "target": "_self",
           "child": [
             {
-              "title": "考试信息",
+              "title": "考試信息",
               "href": "/authority_render/example_manage",
               "icon": "fa fa-tachometer",
               "target": "_self"
             },
             {
-              "title": "考试历史",
+              "title": "考試歷史",
               "href": "/authority_render/normal_example_history",
               "icon": "fa fa-tachometer",
               "target": "_self"
